@@ -1,5 +1,5 @@
 import reactImg from "./assets/react-core-concepts.png";
-import componentsImg from "./assets/components.png";
+import { CORE_CONCEPTS } from "./data.js";
 
 const reactDescriptions = ["Fundamental", "Crucial", "Core"];
 
@@ -7,12 +7,12 @@ function genRandomInt(max) {
   return Math.floor(Math.random() * (max + 1));
 }
 
-function CoreConcept(props) {
+function CoreConcept({ image, title, description }) {
   return (
     <li>
-      <img src={props.image} alt={props.title} />
-      <h3>{props.title}</h3>
-      <p>{props.description}</p>
+      <img src={image} alt={title} />
+      <h3>{title}</h3>
+      <p>{description}</p>
     </li>
   );
 }
@@ -33,6 +33,16 @@ function Header() {
 }
 
 function App() {
+  // const mappedList = CORE_CONCEPTS.map((currConcept) => {
+  //   return (
+  //     <CoreConcept
+  //       image={currConcept.image}
+  //       title={currConcept.title}
+  //       description={currConcept.description}
+  //     />
+  //   );
+  // });
+
   return (
     <div>
       <Header />
@@ -40,26 +50,10 @@ function App() {
         <section id="core-concepts">
           <h2>Core Concept</h2>
           <ul>
-            <CoreConcept
-              image={componentsImg}
-              title="Components"
-              description="The core UI building block."
-            />
-            <CoreConcept
-              image={componentsImg}
-              title="Components"
-              description="The core UI building block."
-            />
-            <CoreConcept
-              image={componentsImg}
-              title="Components"
-              description="The core UI building block."
-            />
-            <CoreConcept
-              image={componentsImg}
-              title="Components"
-              description="The core UI building block."
-            />
+            <CoreConcept {...CORE_CONCEPTS[0]} />
+            <CoreConcept {...CORE_CONCEPTS[1]} />
+            <CoreConcept {...CORE_CONCEPTS[2]} />
+            <CoreConcept {...CORE_CONCEPTS[3]} />
           </ul>
         </section>
       </main>
