@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import CoreConcept from "./components/CoreConcept.jsx";
 import Header from "./components/Header/Header.jsx";
 import TabButton from "./components/TabButton.jsx";
@@ -12,6 +14,7 @@ function genRandomInt(max) {
 }
 
 function App() {
+  let [selectedTopic, setSelectedTopic] = useState("Please click a button");
   // const mappedList = CORE_CONCEPTS.map((currConcept) => {
   //   return (
   //     <CoreConcept
@@ -24,8 +27,10 @@ function App() {
   // function handleSelect(tabName) {
   //   console.log(tabName + "selected.");
   // }
+  // let content = "Please click a button";
+
   const handleSelect = (selectedButton) => {
-    console.log(selectedButton);
+    setSelectedTopic(selectedButton);
   };
 
   return (
@@ -54,6 +59,7 @@ function App() {
             <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
             <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
           </menu>
+          {selectedTopic}
         </section>
       </main>
     </div>
