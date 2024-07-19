@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
 
 import CoreConcept from "./components/CoreConcept.jsx";
 import Header from "./components/Header/Header.jsx";
@@ -46,7 +46,7 @@ function App() {
   }
 
   return (
-    <div>
+    <>
       <Header
         image={reactImg}
         description={reactDescriptions[genRandomInt(2)]}
@@ -87,7 +87,7 @@ function App() {
           {tabContent}
         </section>
       </main>
-    </div>
+    </>
   );
 }
 
