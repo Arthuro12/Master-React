@@ -7,9 +7,10 @@ export default function CoreConcepts() {
     return (
       <CoreConcept
         key={currentConcept.title}
-        image={currentConcept.image}
-        title={currentConcept.title}
-        description={currentConcept.description}
+        // image={currentConcept.image}
+        // title={currentConcept.title}
+        // description={currentConcept.description}
+        {...currentConcept}
       />
     );
   });
