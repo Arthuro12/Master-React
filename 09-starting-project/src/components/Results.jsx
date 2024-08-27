@@ -1,5 +1,8 @@
 import { calculateInvestmentResults, formatter } from "../util/investment.js";
 
+// This will not reset the results variable when the component is rendered again
+// const results = [];
+
 export default function Results({ input }) {
   const results = [];
   calculateInvestmentResults(input, results);
