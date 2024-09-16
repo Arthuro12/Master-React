@@ -13,6 +13,7 @@ export default function Player({}) {
   function setName() {
     // setSubmitted((oldValue) => !oldValue);
     setPlayerName(inputPlayerName.current.value);
+    inputPlayerName.current.value = "";
   }
   return (
     <section id="player">
