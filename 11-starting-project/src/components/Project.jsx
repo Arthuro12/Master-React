@@ -15,6 +15,6 @@ export default function Project({ project, tasks, onDelete, onAddTask, onDeleteT
             <p className="mb-4 text-stone-400">{formattedDate}</p>
             <p className="text-stone-600 whitespace-pre-wrap">{project.description}</p>
         </header>
-        <Tasks tasks={tasks} onAddTask={onAddTask} onDeleteTask={onDeleteTask} />
+        <Tasks tasks={tasks} selectedProjectId={project.id} onAddTask={onAddTask} onDeleteTask={onDeleteTask} />
     </div>
 }
